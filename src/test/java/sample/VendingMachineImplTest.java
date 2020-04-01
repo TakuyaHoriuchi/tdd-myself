@@ -4,8 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-
-class VendingMachineTest {
+class VendingMachineImplTest {
 
     @Test
     void purchaseCoffee() {
@@ -16,10 +15,10 @@ class VendingMachineTest {
         //WHEN
         vendingMachine.insertCoin(new HundredCoin());
 
-        PurchaseResult purchaseResult = vendingMachine.pushButton(DrinkType.coffee);
+        PurchaseResult purchaseResult = vendingMachine.pushButton(DrinkType.COFFEE);
 
         //THEN
-        assertThat(purchaseResult.getDrink().getType()).isEqualTo(DrinkType.coffee);
+        assertThat(purchaseResult.getDrink().getType()).isEqualTo(DrinkType.COFFEE);
         assertThat(purchaseResult.getCoins()).isEmpty();
     }
 
@@ -33,10 +32,10 @@ class VendingMachineTest {
         vendingMachine.insertCoin(new HundredCoin());
         vendingMachine.insertCoin(new FiftyCoin());
 
-        PurchaseResult purchaseResult = vendingMachine.pushButton(DrinkType.tea);
+        PurchaseResult purchaseResult = vendingMachine.pushButton(DrinkType.TEA);
 
         //THEN
-        assertThat(purchaseResult.getDrink().getType()).isEqualTo(DrinkType.tea);
+        assertThat(purchaseResult.getDrink().getType()).isEqualTo(DrinkType.TEA);
         assertThat(purchaseResult.getCoins()).isEmpty();
     }
 

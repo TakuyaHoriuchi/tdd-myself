@@ -5,7 +5,7 @@ import java.util.List;
 
 public class VendingMachineImpl implements VendingMachine {
 
-    List<Coin> coins = new ArrayList<>();
+    private List<Coin> coins = new ArrayList<>();
 
     @Override
     public void insertCoin(Coin coin) {
