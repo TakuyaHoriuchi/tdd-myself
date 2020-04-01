@@ -3,7 +3,7 @@ package sample;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VendorMachineImpl implements VendorMachine {
+public class VendingMachineImpl implements VendingMachine {
 
     List<Coin> coins = new ArrayList<>();
 

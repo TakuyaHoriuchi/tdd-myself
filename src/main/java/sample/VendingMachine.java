@@ -2,7 +2,7 @@ package sample;
 
 import java.util.List;
 
-public interface VendorMachine {
+public interface VendingMachine {
 
     void insertCoin(Coin coin);
 

@@ -5,18 +5,18 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 
-class VendorMachineTest {
+class VendingMachineTest {
 
     @Test
     void purchaseCoffee() {
 
         //GIVEN
-        VendorMachine vendorMachine = new VendorMachineImpl();
+        VendingMachine vendingMachine = new VendingMachineImpl();
 
         //WHEN
-        vendorMachine.insertCoin(new HundredCoin());
+        vendingMachine.insertCoin(new HundredCoin());
 
-        PurchaseResult purchaseResult = vendorMachine.pushButton(DrinkType.coffee);
+        PurchaseResult purchaseResult = vendingMachine.pushButton(DrinkType.coffee);
 
         //THEN
         assertThat(purchaseResult.getDrink().getType()).isEqualTo(DrinkType.coffee);
@@ -27,13 +27,13 @@ class VendorMachineTest {
     void purchaseTea() {
 
         //GIVEN
-        VendorMachine vendorMachine = new VendorMachineImpl();
+        VendingMachine vendingMachine = new VendingMachineImpl();
 
         //WHEN
-        vendorMachine.insertCoin(new HundredCoin());
-        vendorMachine.insertCoin(new FiftyCoin());
+        vendingMachine.insertCoin(new HundredCoin());
+        vendingMachine.insertCoin(new FiftyCoin());
 
-        PurchaseResult purchaseResult = vendorMachine.pushButton(DrinkType.tea);
+        PurchaseResult purchaseResult = vendingMachine.pushButton(DrinkType.tea);
 
         //THEN
         assertThat(purchaseResult.getDrink().getType()).isEqualTo(DrinkType.tea);
