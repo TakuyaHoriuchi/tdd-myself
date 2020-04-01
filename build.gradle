@@ -16,7 +16,8 @@ test {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine'
-    testImplementation 'org.junit.jupiter:junit-jupiter-params'
-    testCompile("org.assertj:assertj-core:3.11.1")
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.6.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-params:5.6.1'
+    testCompile 'org.assertj:assertj-core:3.11.1'
 }
