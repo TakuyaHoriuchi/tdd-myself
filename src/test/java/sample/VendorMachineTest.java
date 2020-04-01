@@ -8,16 +8,36 @@ import org.junit.jupiter.api.Test;
 class VendorMachineTest {
 
     @Test
-    void test(){
+    void purchaseCoffee() {
 
         //GIVEN
-        VendorMachine vendorMachine = new VendorMachine();
+        VendorMachine vendorMachine = new VendorMachineImpl();
 
         //WHEN
-        VendorMachine.Drink drink = vendorMachine.purchase(100,"coffee");
+        vendorMachine.insertCoin(new HundredCoin());
+
+        PurchaseResult purchaseResult = vendorMachine.pushButton(DrinkType.coffee);
 
         //THEN
-        assertThat(drink.getName()).isEqualTo("coffee");
+        assertThat(purchaseResult.getDrink().getType()).isEqualTo(DrinkType.coffee);
+        assertThat(purchaseResult.getCoins()).isEmpty();
+    }
+
+    @Test
+    void purchaseTea() {
+
+        //GIVEN
+        VendorMachine vendorMachine = new VendorMachineImpl();
+
+        //WHEN
+        vendorMachine.insertCoin(new HundredCoin());
+        vendorMachine.insertCoin(new FiftyCoin());
+
+        PurchaseResult purchaseResult = vendorMachine.pushButton(DrinkType.tea);
+
+        //THEN
+        assertThat(purchaseResult.getDrink().getType()).isEqualTo(DrinkType.tea);
+        assertThat(purchaseResult.getCoins()).isEmpty();
     }
 
 }

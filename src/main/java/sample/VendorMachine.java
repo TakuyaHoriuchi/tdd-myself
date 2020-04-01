@@ -1,14 +1,14 @@
 package sample;
 
-public class VendorMachine {
+import java.util.List;
 
-    public Drink purchase(int money, String drinkName) {
-        return new Drink();
-    }
+public interface VendorMachine {
 
-    public class Drink {
-        public String getName() {
-            return "coffee";
-        }
-    }
+    void insertCoin(Coin coin);
+
+    PurchaseResult pushButton(DrinkType drinkType);
+
+    List<Coin> returnMoney();
+
+    void refillDrink();
 }
