@@ -16,7 +16,14 @@ class FizzBuzzTest {
 
     @Test
     void test1() {
+        String actual = fizzBuzz.execute(1);
+        assertThat(actual).isEqualTo("1");
+    }
 
+    @Test
+    void test6() {
+        String actual = fizzBuzz.execute(6);
+        assertThat(actual).isEqualTo("Fizz");
     }
 
     @Test
