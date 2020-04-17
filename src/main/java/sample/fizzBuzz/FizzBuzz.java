@@ -3,10 +3,18 @@ package sample.fizzBuzz;
 public class FizzBuzz {
 
     public String execute(int num) {
-        if (num != 3) {
-            return String.valueOf(num);
+        if (num == 5) {
+            return "Buzz";
         }
 
-        return "Fizz";
+        if (num == 10) {
+            return "Buzz";
+        }
+
+        if (num % 3 == 0) {
+            return "Fizz";
+        }
+
+        return String.valueOf(num);
     }
 }

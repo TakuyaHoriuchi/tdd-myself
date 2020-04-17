@@ -21,7 +21,7 @@ class FizzBuzzTest {
     }
 
     @Test
-    void test6() {
+    void fizz6() {
         String actual = fizzBuzz.execute(6);
         assertThat(actual).isEqualTo("Fizz");
     }
@@ -32,5 +32,16 @@ class FizzBuzzTest {
         assertThat(actual).isEqualTo("Fizz");
     }
 
+    @Test
+    void buzz5() {
+        String actual = fizzBuzz.execute(5);
+        assertThat(actual).isEqualTo("Buzz");
+    }
+
+    @Test
+    void buzz10() {
+        String actual = fizzBuzz.execute(10);
+        assertThat(actual).isEqualTo("Buzz");
+    }
 
 }
