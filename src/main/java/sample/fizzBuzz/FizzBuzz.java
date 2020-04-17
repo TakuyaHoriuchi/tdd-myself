@@ -3,11 +3,8 @@ package sample.fizzBuzz;
 public class FizzBuzz {
 
     public String execute(int num) {
-        if (num == 5) {
-            return "Buzz";
-        }
 
-        if (num == 10) {
+        if (num % 5 == 0) {
             return "Buzz";
         }
 

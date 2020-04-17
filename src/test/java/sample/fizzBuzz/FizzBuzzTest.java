@@ -3,6 +3,12 @@ package sample.fizzBuzz;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 class FizzBuzzTest {
 
@@ -44,4 +50,18 @@ class FizzBuzzTest {
         assertThat(actual).isEqualTo("Buzz");
     }
 
+    @ParameterizedTest
+    @MethodSource("argumentProviders")
+    void test(int num, String expected) {
+        String actual = fizzBuzz.execute(num);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    private static Stream<Arguments> argumentProviders() {
+        return Stream.of(
+                Arguments.arguments(1, "1"),
+                Arguments.arguments(2, "2"),
+                Arguments.arguments(3, "Fizz")
+        );
+    }
 }
