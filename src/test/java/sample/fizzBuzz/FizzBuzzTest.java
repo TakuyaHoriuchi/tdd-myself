@@ -13,6 +13,4 @@ class FizzBuzzTest {
         String actual = fizzBuzz.execute(3);
         assertThat(actual).isEqualTo("Fizz");
     }
-
-
 }
