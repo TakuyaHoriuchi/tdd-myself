@@ -1,5 +1,5 @@
 # tdd-myself
 
-# cloud9
-## test
-`./gradle test --tests "*TestClassName*"`
+## cloud9
+### test
+`./gradlew test --tests "*FizzBuzzTest*"`
